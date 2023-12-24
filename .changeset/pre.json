@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.2"
   },
   "changesets": [
-    "tiny-seas-ring"
+    "tiny-seas-ring",
+    "young-chefs-double"
   ]
 }

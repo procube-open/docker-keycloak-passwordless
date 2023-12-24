@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.3-rc.1
+
+### Patch Changes
+
+- Fix:.tags が不要なので削除した
+
 ## 0.0.3-rc.0
 
 ### Patch Changes
