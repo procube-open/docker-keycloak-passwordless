@@ -30,7 +30,7 @@ jobs:
           echo "taglist=$(./docker-tags procube/keycloak-passwordless)" >> "$GITHUB_OUTPUT"
       - name: Log in to Docker Hub
         if: >-
-          ${{steps.check-in-pre.outputs.pre == 0 &&
+          ${{steps.check-in-pre.outputs.pre == 1 &&
           ! contains(fromJson(steps.tag-list.outputs.taglist), steps.get-version.outputs.version)}}
         uses: docker/login-action@v2
         with:
