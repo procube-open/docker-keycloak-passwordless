@@ -40,7 +40,7 @@ jobs:
       - name: Build and push Docker image
         if: >-
           ${{steps.check-in-pre.outputs.pre == 0 &&
-          ! contains(fromJson(steps.tag-list.outputs.taglist).tags, steps.get-version.outputs.version)}}
+          ! contains(fromJson(steps.tag-list.outputs.taglist), steps.get-version.outputs.version)}}
         uses: docker/build-push-action@v5
         with:
           context: .

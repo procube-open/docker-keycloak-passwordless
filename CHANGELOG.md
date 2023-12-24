@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.3-rc.2
+
+### Patch Changes
+
+- Fix:余分な.tags が残っていた
+
 ## 0.0.3-rc.1
 
 ### Patch Changes
