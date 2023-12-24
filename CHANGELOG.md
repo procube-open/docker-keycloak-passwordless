@@ -1,5 +1,13 @@
 # auth-keycloak-cr
 
+## 0.0.3
+
+### Patch Changes
+
+- e05342b: docker-tags の改行を出力しないようにする
+- 1ffcc03: Fix:余分な.tags が残っていた
+- 27d0018: Fix:.tags が不要なので削除した
+
 ## 0.0.3-rc.2
 
 ### Patch Changes
