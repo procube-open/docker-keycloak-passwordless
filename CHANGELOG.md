@@ -1,5 +1,17 @@
 # auth-keycloak-cr
 
+## 0.0.4
+
+### Patch Changes
+
+- c387460: Fix no docker login for latest release
+
+## 0.0.4-rc.0
+
+### Patch Changes
+
+- Fix no docker login for latest release
+
 ## 0.0.3
 
 ### Patch Changes
