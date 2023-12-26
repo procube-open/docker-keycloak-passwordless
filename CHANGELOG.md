@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.0
+
+### Patch Changes
+
+- 表示名カスタマイズ
+
 ## 0.0.4
 
 ### Patch Changes

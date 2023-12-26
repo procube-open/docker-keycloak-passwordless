@@ -12,6 +12,9 @@ for client in realm.get('clients', []):
 
 if os.environ.get('OIDC_WEB_AUTHN_POLICY_PASSWORD_RP_ID'):
   realm['webAuthnPolicyPasswordlessRpId'] = int(os.environ['OIDC_WEB_AUTHN_POLICY_PASSWORD_RP_ID'])
+if os.environ.get('OIDC_DISPLAY_NAME'):
+  realm['displayName'] = int(os.environ['OIDC_DISPLAY_NAME'])
+  realm['displayNameHtml'] = int(os.environ['OIDC_DISPLAY_NAME'])
 if os.environ.get('OIDC_ACCESS_TOKEN_LIFESPAN'):
   realm['accessTokenLifespan'] = int(os.environ['OIDC_ACCESS_TOKEN_LIFESPAN'])
 if os.environ.get('OIDC_SSO_SESSION_IDLE_TIMEOUT'):
