@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.4"
   },
   "changesets": [
-    "afraid-needles-pretend"
+    "afraid-needles-pretend",
+    "curvy-beds-float"
   ]
 }

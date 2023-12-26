@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.1
+
+### Patch Changes
+
+- Fix int() cause error
+
 ## 0.0.5-rc.0
 
 ### Patch Changes
