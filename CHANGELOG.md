@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.5
+
+### Patch Changes
+
+- デバッグ
+
 ## 0.0.5-rc.4
 
 ### Patch Changes
