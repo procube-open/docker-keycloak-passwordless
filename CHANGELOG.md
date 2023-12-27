@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.7
+
+### Patch Changes
+
+- support protocolMappers
+
 ## 0.0.5-rc.6
 
 ### Patch Changes

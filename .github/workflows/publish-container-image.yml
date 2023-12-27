@@ -32,7 +32,6 @@ jobs:
       - name: Check if the image for the version is already pushed
         id: tag-list
         run: |
-          ./docker-tags -v procube/keycloak-passwordless
           echo "taglist=$(./docker-tags procube/keycloak-passwordless)" >> "$GITHUB_OUTPUT"
       - name: Add Tag
         if: >-
