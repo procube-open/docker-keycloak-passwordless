@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.3
+
+### Patch Changes
+
+- docker login ahead
+
 ## 0.0.5-rc.2
 
 ### Patch Changes
