@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.2
+
+### Patch Changes
+
+- Fix no OIDC\_
+
 ## 0.0.5-rc.1
 
 ### Patch Changes

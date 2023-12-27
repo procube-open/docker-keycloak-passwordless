@@ -20,7 +20,7 @@ if os.environ.get('OIDC_ACCESS_TOKEN_LIFESPAN'):
 if os.environ.get('OIDC_SSO_SESSION_IDLE_TIMEOUT'):
   realm['ssoSessionIdleTimeout'] = int(os.environ['OIDC_SSO_SESSION_IDLE_TIMEOUT'])
 if os.environ.get('OIDC_SSO_SESSION_MAX_LIFESPAN'):
-  realm['ssoSessionMaxLifespan'] = int(os.environ['SSO_SESSION_MAX_LIFESPAN'])
+  realm['ssoSessionMaxLifespan'] = int(os.environ['OIDC_SSO_SESSION_MAX_LIFESPAN'])
 if os.environ.get('KC_WEBGATE_REALM_FRONTEND_URL'):
   realm['attributes']['frontendUrl'] = os.environ['KC_WEBGATE_REALM_FRONTEND_URL']
 if os.environ.get('KC_WEBGATE_REALM_SMTP_SERVER'):
