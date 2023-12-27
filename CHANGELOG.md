@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.6
+
+### Patch Changes
+
+- increment PAGE_NO
+
 ## 0.0.5-rc.5
 
 ### Patch Changes

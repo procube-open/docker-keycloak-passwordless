@@ -195,7 +195,8 @@ while [ "${TARGET_URL}" != "null" ]; do
         _claen
         exit ${STATUS}
     fi
-    PAGE_NO=$(echo ${TARGET_URL} | sed -e 's/^\(http.\+\)\(\?\)\(\page=\)\([[:digit:]]\+\)$/\4/')
+    PAGE_NO=$((PAGE_NO+1))
+    # PAGE_NO=$(echo ${TARGET_URL} | sed -e 's/^\(http.\+\)\(\?\)\(\page=\)\([[:digit:]]\+\)$/\4/')
     # For GNU
     # PAGE_NO=$(echo ${TARGET_URL} | sed -E -e 's|^https?://.+\?page=([[:digit:]]+)$|\1|')
 done
