@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.8
+
+### Patch Changes
+
+- enable account-console
+
 ## 0.0.5-rc.7
 
 ### Patch Changes

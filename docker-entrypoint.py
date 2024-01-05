@@ -8,8 +8,13 @@ with open('/etc/realm-export.json', 'r') as f:
   realm = json.load(f)
 
 for client in realm.get('clients', []):
+  if os.environ.get('KC_WEBGATE_REALM_FRONTEND_URL') and client['webOrigins'] == []:
+    client['webOrigins'] = [os.environ['KC_WEBGATE_REALM_FRONTEND_URL']]
   if client.get('clientId') == 'webgate-web':
     client['secret'] = os.environ['OIDC_CLIENT_SECRET']
+    if os.environ.get('KC_WEBGATE_REALM_RP_URL'):
+      client['rootUrl'] = os.environ['KC_WEBGATE_REALM_RP_URL']
+      client['baseUrl'] = os.environ['KC_WEBGATE_REALM_RP_URL']
     if os.environ.get('KC_WEBGATE_MAPPERS'):
       client['protocolMappers'] = list(map(
         lambda name: {

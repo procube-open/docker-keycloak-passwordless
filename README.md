@@ -15,7 +15,8 @@ Web 認証サーバの keycloak のイメージを提供する
 |OIDC_ACCESS_TOKEN_LIFESPAN|アクセストークンの有効期間（秒）|✗|300|
 |OIDC_SSO_SESSION_IDLE_TIMEOUT|リフレッシュトークンの有効期間（秒）|✗|1800|
 |OIDC_SSO_SESSION_MAX_LIFESPAN|OIDCセッションの最大有効期間（秒）|✗|64800|
-|KC_WEBGATE_REALM_FRONTEND_URL|WEBGATEレルムのフロントエンドURL|✗|https://example.com/|
+|KC_WEBGATE_REALM_FRONTEND_URL|WEBGATEレルムのOPのフロントエンドURL|✗|https://example.com/|
+|KC_WEBGATE_REALM_RP_URL|WEBGATEレルムのRPのURL|✗|https://example.com/|
 |KC_WEBGATE_REALM_SMTP_SERVER|SMTPサーバのホスト名|✗|smtp.gmail.com|
 |KC_WEBGATE_REALM_SMTP_PORT|SMTPサーバのポート番号|✗|５８７|
 |KC_WEBGATE_REALM_SMTP_FROM|メールのFROMのアドレス|✗|support@example.com|
