@@ -30,11 +30,11 @@
   "enabled": true,
   "sslRequired": "external",
   "registrationAllowed": false,
-  "registrationEmailAsUsername": true,
+  "registrationEmailAsUsername": false,
   "rememberMe": true,
   "verifyEmail": false,
-  "loginWithEmailAllowed": true,
-  "duplicateEmailsAllowed": false,
+  "loginWithEmailAllowed": false,
+  "duplicateEmailsAllowed": true,
   "resetPasswordAllowed": true,
   "editUsernameAllowed": false,
   "bruteForceProtected": false,
@@ -1519,6 +1519,60 @@
   "defaultLocale": "en",
   "authenticationFlows": [
     {
+      "id": "a60814b1-193a-46f0-8685-16819e49cc79",
+      "alias": "1st Condition Flow",
+      "description": "",
+      "providerId": "basic-flow",
+      "topLevel": false,
+      "builtIn": false,
+      "authenticationExecutions": [
+        {
+          "authenticatorConfig": "Level 1",
+          "authenticator": "conditional-level-of-authentication",
+          "authenticatorFlow": false,
+          "requirement": "REQUIRED",
+          "priority": 0,
+          "autheticatorFlow": false,
+          "userSetupAllowed": false
+        },
+        {
+          "authenticator": "auth-password-form",
+          "authenticatorFlow": false,
+          "requirement": "REQUIRED",
+          "priority": 1,
+          "autheticatorFlow": false,
+          "userSetupAllowed": false
+        }
+      ]
+    },
+    {
+      "id": "a94ce07f-cfe8-4f17-bb3e-28c467181244",
+      "alias": "2nd Condition Flow",
+      "description": "",
+      "providerId": "basic-flow",
+      "topLevel": false,
+      "builtIn": false,
+      "authenticationExecutions": [
+        {
+          "authenticatorConfig": "Level 2",
+          "authenticator": "conditional-level-of-authentication",
+          "authenticatorFlow": false,
+          "requirement": "REQUIRED",
+          "priority": 0,
+          "autheticatorFlow": false,
+          "userSetupAllowed": false
+        },
+        {
+          "authenticator": "auth-otp-form",
+          "authenticatorFlow": false,
+          "requirement": "REQUIRED",
+          "priority": 1,
+          "autheticatorFlow": false,
+          "userSetupAllowed": false
+        }
+      ]
+    },
+    {
       "id": "be83a8a4-abcf-497c-b47f-7d61614d6f53",
       "alias": "Account verification options",
       "description": "Method with which to verity the existing account",
@@ -1649,6 +1703,32 @@
       ]
     },
     {
+      "id": "4f107dc4-fe27-4f05-a024-42f77fdfab82",
+      "alias": "Password or Step up to OTP",
+      "description": "",
+      "providerId": "basic-flow",
+      "topLevel": false,
+      "builtIn": false,
+      "authenticationExecutions": [
+        {
+          "authenticatorFlow": true,
+          "requirement": "CONDITIONAL",
+          "priority": 0,
+          "autheticatorFlow": true,
+          "flowAlias": "1st Condition Flow",
+          "userSetupAllowed": false
+        },
+        {
+          "authenticatorFlow": true,
+          "requirement": "CONDITIONAL",
+          "priority": 1,
+          "autheticatorFlow": true,
+          "flowAlias": "2nd Condition Flow",
+          "userSetupAllowed": false
+        }
+      ]
+    },
+    {
       "id": "74a44a28-904e-4a56-8faa-e9001403586e",
       "alias": "Reset - Conditional OTP",
       "description": "Flow to determine if the OTP should be reset or not. Set to REQUIRED to force.",
@@ -1666,58 +1746,6 @@
         },
         {
           "authenticator": "reset-otp",
-          "authenticatorFlow": false,
-          "requirement": "REQUIRED",
-          "priority": 20,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        }
-      ]
-    },
-    {
-      "id": "959d2f05-1f74-49fa-aa77-25df29fe3d18",
-      "alias": "WEBGATE flow",
-      "description": "browser based authentication",
-      "providerId": "basic-flow",
-      "topLevel": true,
-      "builtIn": false,
-      "authenticationExecutions": [
-        {
-          "authenticator": "auth-cookie",
-          "authenticatorFlow": false,
-          "requirement": "ALTERNATIVE",
-          "priority": 10,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        },
-        {
-          "authenticatorFlow": true,
-          "requirement": "ALTERNATIVE",
-          "priority": 11,
-          "autheticatorFlow": true,
-          "flowAlias": "WebAuthn Passwordless flow",
-          "userSetupAllowed": false
-        }
-      ]
-    },
-    {
-      "id": "f588feea-c248-41c1-ae76-faf06500da53",
-      "alias": "WEBGATE flow Browser - Conditional OTP",
-      "description": "Flow to determine if the OTP is required for the authentication",
-      "providerId": "basic-flow",
-      "topLevel": false,
-      "builtIn": false,
-      "authenticationExecutions": [
-        {
-          "authenticator": "conditional-user-configured",
-          "authenticatorFlow": false,
-          "requirement": "REQUIRED",
-          "priority": 10,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        },
-        {
-          "authenticator": "auth-otp-form",
           "authenticatorFlow": false,
           "requirement": "REQUIRED",
           "priority": 20,
@@ -1780,6 +1808,32 @@
       ]
     },
     {
+      "id": "959d2f05-1f74-49fa-aa77-25df29fe3d18",
+      "alias": "WEBGATE flow",
+      "description": "browser based authentication",
+      "providerId": "basic-flow",
+      "topLevel": true,
+      "builtIn": false,
+      "authenticationExecutions": [
+        {
+          "authenticator": "auth-cookie",
+          "authenticatorFlow": false,
+          "requirement": "ALTERNATIVE",
+          "priority": 10,
+          "autheticatorFlow": false,
+          "userSetupAllowed": false
+        },
+        {
+          "authenticatorFlow": true,
+          "requirement": "ALTERNATIVE",
+          "priority": 11,
+          "autheticatorFlow": true,
+          "flowAlias": "WebAuthn Passwordless flow",
+          "userSetupAllowed": false
+        }
+      ]
+    },
+    {
       "id": "094c7e59-46b6-4969-9ae9-03f9719e5a9b",
       "alias": "WebAuthn Passwordless flow",
       "description": "",
@@ -1796,71 +1850,11 @@
           "userSetupAllowed": false
         },
         {
-          "authenticator": "auth-password-form",
-          "authenticatorFlow": false,
+          "authenticatorFlow": true,
           "requirement": "ALTERNATIVE",
           "priority": 2,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        }
-      ]
-    },
-    {
-      "id": "ab8c883a-1559-4484-8f39-970d2d6f333b",
-      "alias": "WebAuthn Passwordless flow sub",
-      "description": "",
-      "providerId": "basic-flow",
-      "topLevel": false,
-      "builtIn": false,
-      "authenticationExecutions": [
-        {
-          "authenticator": "conditional-user-configured",
-          "authenticatorFlow": false,
-          "requirement": "REQUIRED",
-          "priority": 0,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        },
-        {
-          "authenticator": "webauthn-authenticator-passwordless",
-          "authenticatorFlow": false,
-          "requirement": "ALTERNATIVE",
-          "priority": 1,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        },
-        {
-          "authenticator": "auth-password-form",
-          "authenticatorFlow": false,
-          "requirement": "ALTERNATIVE",
-          "priority": 2,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        }
-      ]
-    },
-    {
-      "id": "5ca96422-a697-4e0c-8a48-21f982ef0b97",
-      "alias": "WebAuthn passwordless flow",
-      "description": "",
-      "providerId": "basic-flow",
-      "topLevel": false,
-      "builtIn": false,
-      "authenticationExecutions": [
-        {
-          "authenticator": "conditional-user-configured",
-          "authenticatorFlow": false,
-          "requirement": "REQUIRED",
-          "priority": 1,
-          "autheticatorFlow": false,
-          "userSetupAllowed": false
-        },
-        {
-          "authenticator": "webauthn-authenticator-passwordless",
-          "authenticatorFlow": false,
-          "requirement": "ALTERNATIVE",
-          "priority": 2,
-          "autheticatorFlow": false,
+          "autheticatorFlow": true,
+          "flowAlias": "Password or Step up to OTP",
           "userSetupAllowed": false
         }
       ]
@@ -2170,6 +2164,22 @@
   ],
   "authenticatorConfig": [
     {
+      "id": "d2de1c34-ee65-4701-a40b-e9d8b34a4240",
+      "alias": "Level 1",
+      "config": {
+        "loa-condition-level": "1",
+        "loa-max-age": "64800"
+      }
+    },
+    {
+      "id": "685e02a3-3416-447b-a278-81e718d9d2f6",
+      "alias": "Level 2",
+      "config": {
+        "loa-condition-level": "2",
+        "loa-max-age": "3600"
+      }
+    },
+    {
       "id": "20b2b231-7809-4959-943c-ae6150420b03",
       "alias": "create unique user config",
       "config": {
@@ -2287,7 +2297,7 @@
     "parRequestUriLifespan": "60",
     "clientSessionMaxLifespan": "0",
     "frontendUrl": "",
-    "acr.loa.map": "{}"
+    "acr.loa.map": "{\"IDM_ADMIN\":\"2\",\"IDM_USER\":\"1\"}"
   },
   "keycloakVersion": "23.0.3",
   "userManagedAccessAllowed": false,
