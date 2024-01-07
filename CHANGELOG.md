@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.11
+
+### Patch Changes
+
+- Fix import error
+
 ## 0.0.5-rc.10
 
 ### Patch Changes

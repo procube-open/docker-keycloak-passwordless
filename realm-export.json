@@ -2164,6 +2164,22 @@
   ],
   "authenticatorConfig": [
     {
+      "id": "d2de1c34-ee65-4701-a40b-e9d8b34a4240",
+      "alias": "Level 1",
+      "config": {
+        "loa-condition-level": "1",
+        "loa-max-age": "64800"
+      }
+    },
+    {
+      "id": "685e02a3-3416-447b-a278-81e718d9d2f6",
+      "alias": "Level 2",
+      "config": {
+        "loa-condition-level": "2",
+        "loa-max-age": "3600"
+      }
+    },
+    {
       "id": "20b2b231-7809-4959-943c-ae6150420b03",
       "alias": "create unique user config",
       "config": {
