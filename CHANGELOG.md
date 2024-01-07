@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.5-rc.9
+
+### Patch Changes
+
+- new authentication flow
+
 ## 0.0.5-rc.8
 
 ### Patch Changes
