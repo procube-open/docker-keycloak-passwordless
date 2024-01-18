@@ -448,13 +448,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/develop/account/",
+      "baseUrl": "/realms/webgate/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/develop/account/*"
+        "/realms/webgate/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
