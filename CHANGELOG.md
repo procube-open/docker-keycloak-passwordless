@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.6-rc.0
+
+### Patch Changes
+
+- Fix build error
+
 ## 0.0.5
 
 ### Patch Changes
