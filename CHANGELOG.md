@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.7
+
+### Patch Changes
+
+- 7fe295c: Fix account-console
+
 ## 0.0.7-rc.0
 
 ### Patch Changes
