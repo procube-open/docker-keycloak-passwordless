@@ -1,10 +1,10 @@
 FROM registry.access.redhat.com/ubi9 AS ubi-micro-build
 # avoid error of ubi registry
 # [MIRROR] tzdata-2023c-1.el9.noarch.rpm: Interrupted by header callback: Inconsistent server data, reported file Content-Length: 864432, repository metadata states file length: 864888 (please report to repository maintainer) 
-ADD https://dl.rockylinux.org/pub/rocky/9/BaseOS/aarch64/os/Packages/t/tzdata-2023c-1.el9.noarch.rpm /root/
+ADD tzdata-2023d-1.el9.noarch.rpm /root/
 RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
     cp /etc/yum.repos.d/ubi.repo /mnt/rootfs/etc/yum.repos.d/ && \
-    dnf install --installroot /mnt/rootfs /root/tzdata-2023c-1.el9.noarch.rpm --releasever 9 --setopt install_weak_deps=false --nodocs -y
+    dnf install --installroot /mnt/rootfs /root/tzdata-2023d-1.el9.noarch.rpm --releasever 9 --setopt install_weak_deps=false --nodocs -y
 RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 --releasever 9 --setopt install_weak_deps=false --nodocs -y && \
     dnf --installroot /mnt/rootfs clean all && \
     rpm --root /mnt/rootfs -e --nodeps setup
