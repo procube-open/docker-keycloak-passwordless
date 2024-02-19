@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.9
+
+### Patch Changes
+
+- 0111ae3: set loa to 2 of account-console client
+
 ## 0.0.9-rc.0
 
 ### Patch Changes
