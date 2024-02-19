@@ -1,5 +1,17 @@
 # auth-keycloak-cr
 
+## 0.0.8
+
+### Patch Changes
+
+- 9fec815: sslRequired の値を none に変更
+
+## 0.0.8-rc.0
+
+### Patch Changes
+
+- sslRequired の値を none に変更
+
 ## 0.0.7
 
 ### Patch Changes
