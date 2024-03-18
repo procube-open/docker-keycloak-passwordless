@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.10
+
+### Patch Changes
+
+- d742e61: Support separated DISPLAY_NAME_HTML
+
 ## 0.0.10-rc.0
 
 ### Patch Changes
