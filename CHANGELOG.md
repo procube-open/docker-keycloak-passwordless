@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.11-rc.0
+
+### Patch Changes
+
+- set password policy
+
 ## 0.0.10
 
 ### Patch Changes

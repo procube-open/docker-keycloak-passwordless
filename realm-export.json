@@ -340,6 +340,7 @@
   "requiredCredentials": [
     "password"
   ],
+  "passwordPolicy": "digits(8) and specialChars(1) and upperCase(1) and lowerCase(1) and notUsername(undefined)",
   "otpPolicyType": "totp",
   "otpPolicyAlgorithm": "HmacSHA1",
   "otpPolicyInitialCounter": 0,
