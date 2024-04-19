@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.10"
   },
   "changesets": [
-    "five-beers-run"
+    "five-beers-run",
+    "long-pots-warn"
   ]
 }

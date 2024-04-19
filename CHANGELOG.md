@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.11-rc.1
+
+### Patch Changes
+
+- fix digits(8)
+
 ## 0.0.11-rc.0
 
 ### Patch Changes
