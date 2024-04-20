@@ -1,5 +1,12 @@
 # auth-keycloak-cr
 
+## 0.0.11
+
+### Patch Changes
+
+- 832e2c2: set password policy
+- c85828a: fix digits(8)
+
 ## 0.0.11-rc.1
 
 ### Patch Changes
