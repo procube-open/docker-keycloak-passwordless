@@ -1,6 +1,6 @@
 {
   "name": "auth-keycloak-cr",
-  "version": "0.0.11",
+  "version": "0.0.12-rc.0",
   "main": "index.js",
   "repository": "git@github.com:sobo-gen3v1/auth-keycloak-cr.git",
   "author": "Mitsuru Nakakawaji <mitsuru@procube.jp>",

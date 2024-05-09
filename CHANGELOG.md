@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.12-rc.0
+
+### Patch Changes
+
+- support supervisord
+
 ## 0.0.11
 
 ### Patch Changes

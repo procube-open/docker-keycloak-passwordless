@@ -67,5 +67,5 @@ if os.environ.get('KC_WEBGATE_REALM_SMTP_SERVER'):
 with open('/opt/keycloak/data/import/realm.json', 'w') as f:
     json.dump(realm, f, indent=2)
 
-path='/opt/keycloak/bin/kc.sh'
-os.execv(path, [path] + sys.argv[1:])
+path='/usr/local/bin/supervisord'
+os.execv(path, [path, "-c", "/usr/local/etc/supervisord.conf"] + sys.argv[1:])
