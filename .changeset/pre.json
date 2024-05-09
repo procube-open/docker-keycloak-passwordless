@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.11"
   },
   "changesets": [
-    "fast-shoes-live"
+    "fast-shoes-live",
+    "plenty-moles-change"
   ]
 }

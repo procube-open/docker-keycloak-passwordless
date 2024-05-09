@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.12-rc.1
+
+### Patch Changes
+
+- add args
+
 ## 0.0.12-rc.0
 
 ### Patch Changes
