@@ -3,6 +3,7 @@ import os
 import sys
 import json
 import uuid
+from shlex import join
 
 with open('/etc/realm-export.json', 'r') as f:
   realm = json.load(f)
@@ -67,5 +68,14 @@ if os.environ.get('KC_WEBGATE_REALM_SMTP_SERVER'):
 with open('/opt/keycloak/data/import/realm.json', 'w') as f:
     json.dump(realm, f, indent=2)
 
+with open('/usr/local/etc/supervisor.d/keycloak.ini', 'r') as f:
+    file_data = f.read()
+
+command = join(['command=/opt/keycloak/bin/kc.sh'] + sys.argv[1:])
+file_data = file_data.replace('command=', command)
+
+with open('/usr/local/etc/supervisor.d/keycloak.ini', 'w') as f:
+    f.write(file_data)
+
 path='/usr/local/bin/supervisord'
-os.execv(path, [path, "-c", "/usr/local/etc/supervisord.conf"] + sys.argv[1:])
+os.execv(path, [path, "-c", "/usr/local/etc/supervisord.conf"])

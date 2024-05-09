@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.12-rc.2
+
+### Patch Changes
+
+- modify keycloak.ini
+
 ## 0.0.12-rc.1
 
 ### Patch Changes
