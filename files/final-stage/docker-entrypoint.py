@@ -72,7 +72,7 @@ with open('/usr/local/etc/supervisor.d/keycloak.ini', 'r') as f:
     file_data = f.read()
 
 command = join(['command=/opt/keycloak/bin/kc.sh'] + sys.argv[1:])
-file_data = file_data.replace('command=', command)
+file_data = file_data.replace('__command__', command)
 
 with open('/usr/local/etc/supervisor.d/keycloak.ini', 'w') as f:
     f.write(file_data)

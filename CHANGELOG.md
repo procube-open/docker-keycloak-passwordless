@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.12-rc.4
+
+### Patch Changes
+
+- change replace method
+
 ## 0.0.12-rc.3
 
 ### Patch Changes
