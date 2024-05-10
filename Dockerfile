@@ -51,6 +51,7 @@ COPY files/final-stage/keycloak.ini /usr/local/etc/supervisor.d
 RUN chmod +x /usr/bin/docker-entrypoint.py && \
     mkdir -p /opt/keycloak/data/import && \
     chown 1000 /opt/keycloak/data/import && \
+    chown -R 1000 /usr/local/etc/supervisor.d && \
     mkdir -p /opt/run && \
     chown 1000 /opt/run && \
     chmod go+w /var/log

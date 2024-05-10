@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.12-rc.3
+
+### Patch Changes
+
+- change owner
+
 ## 0.0.12-rc.2
 
 ### Patch Changes
