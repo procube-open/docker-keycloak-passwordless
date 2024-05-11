@@ -1,5 +1,45 @@
 # auth-keycloak-cr
 
+## 0.0.12
+
+### Patch Changes
+
+- de6d4e7: support supervisord
+- 5af8291: modify keycloak.ini
+- 59bde23: add args
+- fb4b450: change replace method
+- 815f2d7: change owner
+
+## 0.0.12-rc.4
+
+### Patch Changes
+
+- change replace method
+
+## 0.0.12-rc.3
+
+### Patch Changes
+
+- change owner
+
+## 0.0.12-rc.2
+
+### Patch Changes
+
+- modify keycloak.ini
+
+## 0.0.12-rc.1
+
+### Patch Changes
+
+- add args
+
+## 0.0.12-rc.0
+
+### Patch Changes
+
+- support supervisord
+
 ## 0.0.11
 
 ### Patch Changes
