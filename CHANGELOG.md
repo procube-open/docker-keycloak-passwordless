@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.13-rc.0
+
+### Patch Changes
+
+- fix supervisord.conf
+
 ## 0.0.12
 
 ### Patch Changes
