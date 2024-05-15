@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.15-rc.0
+
+### Patch Changes
+
+- modify pidfile
+
 ## 0.0.14
 
 ### Patch Changes
