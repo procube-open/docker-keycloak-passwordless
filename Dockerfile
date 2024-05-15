@@ -45,15 +45,11 @@ USER root
 COPY files/final-stage/realm-export.json /etc
 RUN pip install uuid supervisor
 COPY files/final-stage/docker-entrypoint.py /usr/bin
-COPY files/final-stage/supervisord.conf /usr/local/etc
-RUN mkdir -p /usr/local/etc/supervisor.d
-COPY files/final-stage/keycloak.ini /usr/local/etc/supervisor.d
+COPY files/final-stage/supervisord.conf /etc
+RUN mkdir -p /etc/supervisor.d
+COPY files/final-stage/keycloak.ini /etc/supervisor.d
 RUN chmod +x /usr/bin/docker-entrypoint.py && \
     mkdir -p /opt/keycloak/data/import && \
-    chown 1000 /opt/keycloak/data/import && \
-    chown -R 1000 /usr/local/etc/supervisor.d && \
-    mkdir -p /opt/run && \
-    chown 1000 /opt/run && \
-    chmod go+w /var/log
-USER 1000
+    chown 1000 /opt/keycloak/data/import
+
 ENTRYPOINT ["/usr/bin/docker-entrypoint.py"]
