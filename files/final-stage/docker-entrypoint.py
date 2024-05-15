@@ -68,14 +68,14 @@ if os.environ.get('KC_WEBGATE_REALM_SMTP_SERVER'):
 with open('/opt/keycloak/data/import/realm.json', 'w') as f:
     json.dump(realm, f, indent=2)
 
-with open('/usr/local/etc/supervisor.d/keycloak.ini', 'r') as f:
+with open('/etc/supervisor.d/keycloak.ini', 'r') as f:
     file_data = f.read()
 
 command = join(['command=/opt/keycloak/bin/kc.sh'] + sys.argv[1:])
 file_data = file_data.replace('__command__', command)
 
-with open('/usr/local/etc/supervisor.d/keycloak.ini', 'w') as f:
+with open('/etc/supervisor.d/keycloak.ini', 'w') as f:
     f.write(file_data)
 
 path='/usr/local/bin/supervisord'
-os.execv(path, [path, "-c", "/usr/local/etc/supervisord.conf"])
+os.execv(path, [path, "-c", "/etc/supervisord.conf"])
