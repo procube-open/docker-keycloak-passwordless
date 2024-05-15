@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.16-rc.0
+
+### Patch Changes
+
+- add tar command
+
 ## 0.0.15
 
 ### Patch Changes
