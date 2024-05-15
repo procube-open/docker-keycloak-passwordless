@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.14
+
+### Patch Changes
+
+- 9f1de1b: Modifiy to run supervisord as root user
+
 ## 0.0.14-rc.0
 
 ### Patch Changes
