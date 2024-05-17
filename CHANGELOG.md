@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.16-rc.1
+
+### Patch Changes
+
+- add gzip,vim for debug
+
 ## 0.0.16-rc.0
 
 ### Patch Changes

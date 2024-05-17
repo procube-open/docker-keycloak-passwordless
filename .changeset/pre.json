@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.15"
   },
   "changesets": [
-    "gorgeous-jars-argue"
+    "gorgeous-jars-argue",
+    "seven-pets-vanish"
   ]
 }
