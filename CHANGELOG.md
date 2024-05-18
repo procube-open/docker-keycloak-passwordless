@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.16-rc.2
+
+### Patch Changes
+
+- delete comment out line
+
 ## 0.0.16-rc.1
 
 ### Patch Changes
