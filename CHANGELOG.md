@@ -1,5 +1,13 @@
 # auth-keycloak-cr
 
+## 0.0.16
+
+### Patch Changes
+
+- 4474163: add tar command
+- 1b946db: delete comment out line
+- 9a3e188: add gzip,vim for debug
+
 ## 0.0.16-rc.2
 
 ### Patch Changes
