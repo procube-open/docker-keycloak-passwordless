@@ -5,7 +5,7 @@ ADD tzdata-2023d-1.el9.noarch.rpm /root/
 RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
     cp /etc/yum.repos.d/ubi.repo /mnt/rootfs/etc/yum.repos.d/ && \
     dnf install --installroot /mnt/rootfs /root/tzdata-2023d-1.el9.noarch.rpm --releasever 9 --setopt install_weak_deps=false --nodocs -y
-RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 --releasever 9 --setopt install_weak_deps=false --nodocs -y && \
+RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 tar gzip vim --releasever 9 --setopt install_weak_deps=false --nodocs -y && \
     dnf --installroot /mnt/rootfs clean all && \
     rpm --root /mnt/rootfs -e --nodeps setup
 # build keycloak-webauthn-conditional-mediation-main
