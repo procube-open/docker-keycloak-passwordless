@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "auth-keycloak-cr": "0.0.18"
+  },
+  "changesets": [
+    "witty-berries-report"
+  ]
+}

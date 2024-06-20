@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.19-rc.0
+
+### Patch Changes
+
+- change tag latest
+
 ## 0.0.18
 
 ### Patch Changes
