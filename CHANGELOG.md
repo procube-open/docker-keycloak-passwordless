@@ -1,5 +1,17 @@
 # auth-keycloak-cr
 
+## 0.0.17
+
+### Patch Changes
+
+- 66468a2: add environment to keycloak.ini
+
+## 0.0.17-rc.0
+
+### Patch Changes
+
+- add environment to keycloak.ini
+
 ## 0.0.16
 
 ### Patch Changes
