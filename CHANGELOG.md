@@ -1,5 +1,17 @@
 # auth-keycloak-cr
 
+## 0.0.18
+
+### Patch Changes
+
+- 9c07c41: fix tag
+
+## 0.0.18-rc.0
+
+### Patch Changes
+
+- fix tag
+
 ## 0.0.17
 
 ### Patch Changes
