@@ -1,5 +1,24 @@
 # auth-keycloak-cr
 
+## 0.0.19
+
+### Patch Changes
+
+- df4dff4: change resetPasswordAllowed false
+- 784759d: change tag latest
+
+## 0.0.19-rc.1
+
+### Patch Changes
+
+- change resetPasswordAllowed false
+
+## 0.0.19-rc.0
+
+### Patch Changes
+
+- change tag latest
+
 ## 0.0.18
 
 ### Patch Changes
