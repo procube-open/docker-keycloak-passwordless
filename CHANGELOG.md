@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.19-rc.1
+
+### Patch Changes
+
+- change resetPasswordAllowed false
+
 ## 0.0.19-rc.0
 
 ### Patch Changes

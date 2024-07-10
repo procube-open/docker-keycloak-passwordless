@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.18"
   },
   "changesets": [
+    "moody-countries-pump",
     "witty-berries-report"
   ]
 }
