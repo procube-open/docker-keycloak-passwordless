@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.20-rc.0
+
+### Patch Changes
+
+- fix to output credentials-secret-data from API request
+
 ## 0.0.19
 
 ### Patch Changes
