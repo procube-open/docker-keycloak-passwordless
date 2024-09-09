@@ -13,13 +13,12 @@ RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
     dnf install --installroot /mnt/rootfs /root/tzdata-2023d-1.el9.noarch.rpm --releasever 9 --setopt install_weak_deps=false --nodocs -y
 RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 tar gzip vim --releasever 9 --setopt install_weak_deps=false --nodocs -y && \
     dnf --installroot /mnt/rootfs clean all && \
-    rpm --root /mnt/rootfs -e --nodeps setup && \
-    dnf install git patch -y
+    rpm --root /mnt/rootfs -e --nodeps setup
 # build keycloak-webauthn-conditional-mediation-main
 COPY apache-maven-3.9.6-bin.zip keycloak-webauthn-conditional-mediation-main.zip /opt/
 COPY files/first-stage/UserResource.patch /tmp/
 
-RUN dnf install -y unzip java-17-openjdk java-17-openjdk-devel && \
+RUN dnf install -y unzip git patch java-17-openjdk java-17-openjdk-devel && \
     cd /opt && \
     unzip apache-maven-3.9.6-bin.zip && \
     export PATH=/opt/apache-maven-3.9.6/bin:$PATH && \

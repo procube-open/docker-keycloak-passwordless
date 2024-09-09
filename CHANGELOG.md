@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.20-rc.1
+
+### Patch Changes
+
+- Change where to write
+
 ## 0.0.20-rc.0
 
 ### Patch Changes

@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.19"
   },
   "changesets": [
-    "curvy-eagles-hug"
+    "curvy-eagles-hug",
+    "happy-owls-design"
   ]
 }
