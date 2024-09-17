@@ -1,0 +1,5 @@
+713,714c713
+<                 .map(ModelToRepresentation::toRepresentation)
+<                 .peek(credentialRepresentation -> credentialRepresentation.setSecretData(null));
+---
+>                 .map(ModelToRepresentation::toRepresentation);
