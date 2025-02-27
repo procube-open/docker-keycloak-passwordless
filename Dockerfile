@@ -15,24 +15,24 @@ RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 tar 
     dnf --installroot /mnt/rootfs clean all && \
     rpm --root /mnt/rootfs -e --nodeps setup
 # build keycloak-webauthn-conditional-mediation-main
-COPY apache-maven-3.9.6-bin.zip keycloak-webauthn-conditional-mediation-main.zip /opt/
-COPY files/first-stage/UserResource.patch /tmp/
+# COPY apache-maven-3.9.6-bin.zip keycloak-webauthn-conditional-mediation-main.zip /opt/
+# COPY files/first-stage/UserResource.patch /tmp/
 
-RUN dnf install -y unzip git patch java-17-openjdk java-17-openjdk-devel && \
-    cd /opt && \
-    unzip apache-maven-3.9.6-bin.zip && \
-    export PATH=/opt/apache-maven-3.9.6/bin:$PATH && \
-    unzip keycloak-webauthn-conditional-mediation-main.zip && \
-    tar xzf /tmp/keycloak-${KEYCLOAK_VERSION}.tar.gz && \
-    cd keycloak-webauthn-conditional-mediation-main && \
-    mvn clean package && \
-    cd /root && \
-    git clone https://github.com/keycloak/keycloak.git -b ${KEYCLOAK_VERSION} && \
-    cd keycloak/services && \
-    patch src/main/java/org/keycloak/services/resources/admin/UserResource.java /tmp/UserResource.patch && \
-    mvn -DskipTests=true clean package
+# RUN dnf install -y unzip git patch java-17-openjdk java-17-openjdk-devel && \
+#     cd /opt && \
+#     unzip apache-maven-3.9.6-bin.zip && \
+#     export PATH=/opt/apache-maven-3.9.6/bin:$PATH && \
+#     unzip keycloak-webauthn-conditional-mediation-main.zip && \
+#     tar xzf /tmp/keycloak-${KEYCLOAK_VERSION}.tar.gz && \
+#     cd keycloak-webauthn-conditional-mediation-main && \
+#     mvn clean package && \
+#     cd /root && \
+#     git clone https://github.com/keycloak/keycloak.git -b ${KEYCLOAK_VERSION} && \
+#     cd keycloak/services && \
+#     patch src/main/java/org/keycloak/services/resources/admin/UserResource.java /tmp/UserResource.patch && \
+#     mvn -DskipTests=true clean package
 
-FROM quay.io/keycloak/keycloak:${KEYCLOAK_VERSION} as builder
+FROM quay.io/keycloak/keycloak:${KEYCLOAK_VERSION} AS builder
 ARG KEYCLOAK_VERSION
 
 # Enable health and metrics support
@@ -41,8 +41,8 @@ ENV KC_METRICS_ENABLED=true
 
 # Configure a database vendor
 ENV KC_DB=mysql
-COPY --from=ubi-micro-build /opt/keycloak-webauthn-conditional-mediation-main/target/keycloak-webauthn-conditional-mediation.jar /opt/keycloak/providers/
-COPY --from=ubi-micro-build /root/keycloak/services/target/keycloak-services-${KEYCLOAK_VERSION}.jar /opt/keycloak/lib/lib/main/org.keycloak.keycloak-services-${KEYCLOAK_VERSION}.jar
+# COPY --from=ubi-micro-build /opt/keycloak-webauthn-conditional-mediation-main/target/keycloak-webauthn-conditional-mediation.jar /opt/keycloak/providers/
+# COPY --from=ubi-micro-build /root/keycloak/services/target/keycloak-services-${KEYCLOAK_VERSION}.jar /opt/keycloak/lib/lib/main/org.keycloak.keycloak-services-${KEYCLOAK_VERSION}.jar
 WORKDIR /opt/keycloak
 # for demonstration purposes only, please make sure to use proper certificates in production instead
 # RUN keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=s# erver" -alias server -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore conf/server.keystore
@@ -53,8 +53,8 @@ FROM quay.io/keycloak/keycloak:${KEYCLOAK_VERSION}
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 COPY --from=ubi-micro-build /mnt/rootfs /
 
-ENV KEYCLOAK_ADMIN="admin"
-ENV KEYCLOAK_ADMIN_PASSWORD="admin"
+ENV KC_BOOTSTRAP_ADMIN_USERNAME="admin"
+ENV KC_BOOTSTRAP_ADMIN_PASSWORD="admin"
 ENV KC_HOSTNAME_URL="http://localhost:8080"
 ENV KC_HOSTNAME_STRICT_BACKCHANNEL=false
 ENV KC_DB=mysql

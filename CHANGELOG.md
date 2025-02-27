@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.21-rc.1
+
+### Patch Changes
+
+- remove keycloak-webauthn-conditional-mediation-main
+
 ## 0.0.21-rc.0
 
 ### Patch Changes

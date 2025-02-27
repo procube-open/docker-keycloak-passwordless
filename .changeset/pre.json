@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.20"
   },
   "changesets": [
+    "shiny-tables-repeat",
     "ten-dodos-rescue"
   ]
 }
