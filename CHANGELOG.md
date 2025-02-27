@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.21-rc.0
+
+### Patch Changes
+
+- upgrade keycloak
+
 ## 0.0.20
 
 ### Patch Changes
