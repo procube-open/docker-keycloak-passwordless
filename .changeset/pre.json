@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.20"
   },
   "changesets": [
+    "dry-bears-love",
     "shiny-tables-repeat",
     "ten-dodos-rescue"
   ]

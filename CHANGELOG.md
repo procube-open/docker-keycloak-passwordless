@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.21-rc.2
+
+### Patch Changes
+
+- down grade keycloak
+
 ## 0.0.21-rc.1
 
 ### Patch Changes
