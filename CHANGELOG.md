@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.21-rc.4
+
+### Patch Changes
+
+- fix Dockefile
+
 ## 0.0.21-rc.3
 
 ### Patch Changes

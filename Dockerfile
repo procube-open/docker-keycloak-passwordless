@@ -6,7 +6,7 @@ ARG KEYCLOAK_VERSION
 # avoid error of ubi registry
 # [MIRROR] tzdata-2023c-1.el9.noarch.rpm: Interrupted by header callback: Inconsistent server data, reported file Content-Length: 864432, repository metadata states file length: 864888 (please report to repository maintainer) 
 ADD tzdata-2023d-1.el9.noarch.rpm /root/
-ADD https://github.com/keycloak/keycloak/releases/download/${KEYCLOAK_VERSION}/keycloak-${KEYCLOAK_VERSION}.tar.gz /tmp/
+# ADD https://github.com/keycloak/keycloak/releases/download/${KEYCLOAK_VERSION}/keycloak-${KEYCLOAK_VERSION}.tar.gz /tmp/
 
 RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
     cp /etc/yum.repos.d/ubi.repo /mnt/rootfs/etc/yum.repos.d/ && \
@@ -58,7 +58,7 @@ ENV KC_BOOTSTRAP_ADMIN_USERNAME="admin"
 ENV KC_BOOTSTRAP_ADMIN_PASSWORD="admin"
 # ENV KEYCLOAK_ADMIN="admin"
 # ENV KEYCLOAK_ADMIN_PASSWORD="admin"
-ENV KC_HOSTNAME_URL="http://localhost:8080"
+ENV KC_HOSTNAME="http://localhost:8080"
 ENV KC_HOSTNAME_STRICT_BACKCHANNEL=false
 ENV KC_DB=mysql
 
