@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.21-rc.5
+
+### Patch Changes
+
+- fix Dockerfile
+
 ## 0.0.21-rc.4
 
 ### Patch Changes
