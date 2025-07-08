@@ -1,5 +1,59 @@
 # auth-keycloak-cr
 
+## 0.0.21
+
+### Patch Changes
+
+- 26bbf26: down grade keycloak
+- c58f4df: fix Dockerfile
+- eeb0a9f: fix Dockefile
+- c4dcb0f: remove keycloak-webauthn-conditional-mediation-main
+- 24df2a1: upgrade keycloak
+- dae3c5c: upgrade keycloak
+- 0be67e0: upgrade keycloak
+
+## 0.0.21-rc.6
+
+### Patch Changes
+
+- upgrade keycloak
+
+## 0.0.21-rc.5
+
+### Patch Changes
+
+- fix Dockerfile
+
+## 0.0.21-rc.4
+
+### Patch Changes
+
+- fix Dockefile
+
+## 0.0.21-rc.3
+
+### Patch Changes
+
+- upgrade keycloak
+
+## 0.0.21-rc.2
+
+### Patch Changes
+
+- down grade keycloak
+
+## 0.0.21-rc.1
+
+### Patch Changes
+
+- remove keycloak-webauthn-conditional-mediation-main
+
+## 0.0.21-rc.0
+
+### Patch Changes
+
+- upgrade keycloak
+
 ## 0.0.20
 
 ### Patch Changes

@@ -4,7 +4,7 @@ Web 認証サーバの keycloak のイメージを提供する
 
 ## 環境変数
 
-|変数名|意味|例|必須|
+|変数名|意味|必須|例|
 |--|--|--|--|
 |KC_DB_URL|keycloak が使用するデータベースのURL|○|jdbc:mysql://mysql/keycloak|
 |KC_DB_USERNAME|データベースに接続する際のユーザID|○|keycloak|
