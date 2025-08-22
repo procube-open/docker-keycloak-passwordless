@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 0.0.22-rc.0
+
+### Patch Changes
+
+- publish new branch
+
 ## 0.0.21
 
 ### Patch Changes
