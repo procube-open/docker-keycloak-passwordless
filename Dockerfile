@@ -6,7 +6,6 @@ ARG KEYCLOAK_VERSION
 # avoid error of ubi registry
 # [MIRROR] tzdata-2023c-1.el9.noarch.rpm: Interrupted by header callback: Inconsistent server data, reported file Content-Length: 864432, repository metadata states file length: 864888 (please report to repository maintainer) 
 ADD tzdata-2023d-1.el9.noarch.rpm /root/
-# ADD https://github.com/keycloak/keycloak/releases/download/${KEYCLOAK_VERSION}/keycloak-${KEYCLOAK_VERSION}.tar.gz /tmp/
 
 RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
     cp /etc/yum.repos.d/ubi.repo /mnt/rootfs/etc/yum.repos.d/ && \
@@ -16,17 +15,16 @@ RUN dnf install --installroot /mnt/rootfs python3-pip python3-wheel python3 tar 
     rpm --root /mnt/rootfs -e --nodeps setup
 # build keycloak
 COPY apache-maven-3.9.6-bin.zip /opt/
-# COPY keycloak-webauthn-conditional-mediation-kc25.zip /opt/
+COPY files/first-stage/keycloak-2fa-email-authenticator-main.zip /opt/
 COPY files/first-stage/UserResource.patch /tmp/
 
 RUN dnf install -y unzip git patch java-21-openjdk java-21-openjdk-devel && \
     cd /opt && \
     unzip apache-maven-3.9.6-bin.zip && \
     export PATH=/opt/apache-maven-3.9.6/bin:$PATH && \
-    # unzip keycloak-webauthn-conditional-mediation-kc25.zip && \
-    # tar xzf /tmp/keycloak-${KEYCLOAK_VERSION}.tar.gz && \
-    # cd keycloak-webauthn-conditional-mediation-kc25 && \
-    # mvn clean package && \
+    unzip keycloak-2fa-email-authenticator-main.zip && \
+    cd keycloak-2fa-email-authenticator-main && \
+    mvn clean package && \
     cd /root && \
     git clone https://github.com/keycloak/keycloak.git -b ${KEYCLOAK_VERSION} && \
     cd keycloak/services && \
@@ -42,7 +40,7 @@ ENV KC_METRICS_ENABLED=true
 
 # Configure a database vendor
 ENV KC_DB=mysql
-# COPY --from=ubi-micro-build /opt/keycloak-webauthn-conditional-mediation-kc25/target/keycloak-webauthn-conditional-mediation.jar /opt/keycloak/providers/
+COPY --from=ubi-micro-build /opt/keycloak-2fa-email-authenticator-main/target/keycloak-2fa-email-authenticator-26.0.0-SNAPSHOT.jar /opt/keycloak/providers/
 COPY --from=ubi-micro-build /root/keycloak/services/target/keycloak-services-${KEYCLOAK_VERSION}.jar /opt/keycloak/lib/lib/main/org.keycloak.keycloak-services-${KEYCLOAK_VERSION}.jar
 WORKDIR /opt/keycloak
 # for demonstration purposes only, please make sure to use proper certificates in production instead
@@ -56,8 +54,6 @@ COPY --from=ubi-micro-build /mnt/rootfs /
 
 ENV KC_BOOTSTRAP_ADMIN_USERNAME="admin"
 ENV KC_BOOTSTRAP_ADMIN_PASSWORD="admin"
-# ENV KEYCLOAK_ADMIN="admin"
-# ENV KEYCLOAK_ADMIN_PASSWORD="admin"
 ENV KC_HOSTNAME="http://localhost:8080"
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_DB=mysql

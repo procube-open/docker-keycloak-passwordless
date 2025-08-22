@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "1.0.0"
   },
   "changesets": [
+    "curly-rivers-thank",
     "rare-ladybugs-fix"
   ]
 }

@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 1.1.0-rc.1
+
+### Patch Changes
+
+- install 2fa-mail-authenticator module
+
 ## 1.1.0-rc.0
 
 ### Minor Changes
