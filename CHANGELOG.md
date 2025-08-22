@@ -1,5 +1,15 @@
 # auth-keycloak-cr
 
+## 1.0.0
+
+### Major Changes
+
+- 6846276: commit for major version up
+
+### Patch Changes
+
+- 81a058f: publish new branch
+
 ## 1.0.0-rc.1
 
 ### Major Changes
