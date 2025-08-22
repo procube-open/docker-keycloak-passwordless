@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "auth-keycloak-cr": "1.0.0"
+  },
+  "changesets": [
+    "rare-ladybugs-fix"
+  ]
+}
