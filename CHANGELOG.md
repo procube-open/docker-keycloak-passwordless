@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 1.0.0-rc.1
+
+### Major Changes
+
+- commit for major version up
+
 ## 0.0.22-rc.0
 
 ### Patch Changes

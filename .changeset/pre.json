@@ -5,6 +5,7 @@
     "auth-keycloak-cr": "0.0.21"
   },
   "changesets": [
+    "curly-turkeys-drive",
     "five-eggs-exist"
   ]
 }
