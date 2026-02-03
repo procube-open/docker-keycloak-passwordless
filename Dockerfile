@@ -1,10 +1,10 @@
-ARG KEYCLOAK_VERSION="26.5.0"
+ARG KEYCLOAK_VERSION="26.5.2"
 
 FROM registry.access.redhat.com/ubi9 AS ubi-micro-build
 ARG KEYCLOAK_VERSION
 
 # avoid error of ubi registry
-# [MIRROR] tzdata-2023c-1.el9.noarch.rpm: Interrupted by header callback: Inconsistent server data, reported file Content-Length: 864432, repository metadata states file length: 864888 (please report to repository maintainer) 
+# [MIRROR] tzdata-2023c-1.el9.noarch.rpm: Interrupted by header callback: Inconsistent server data, reported file Content-Length: 864432, repository metadata states file length: 864888 (please report to repository maintainer)
 ADD tzdata-2023d-1.el9.noarch.rpm /root/
 
 RUN mkdir -p /mnt/rootfs/etc/yum.repos.d && \
