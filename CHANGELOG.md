@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 2.0.0-rc.0
+
+### Major Changes
+
+- publish new branch
+
 ## 1.0.0
 
 ### Major Changes
