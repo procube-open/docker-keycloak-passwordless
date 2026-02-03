@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 2.0.0-rc.3
+
+### Patch Changes
+
+- update initial config file
+
 ## 2.0.0-rc.2
 
 ### Patch Changes

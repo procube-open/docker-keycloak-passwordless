@@ -988,6 +988,7 @@
             "user.session.note": "clientAddress",
             "id.token.claim": "true",
             "introspection.token.claim": "true",
+            "userinfo.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "clientAddress",
             "jsonType.label": "String"
@@ -1003,6 +1004,7 @@
             "user.session.note": "client_id",
             "id.token.claim": "true",
             "introspection.token.claim": "true",
+            "userinfo.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "client_id",
             "jsonType.label": "String"
@@ -1018,6 +1020,7 @@
             "user.session.note": "clientHost",
             "id.token.claim": "true",
             "introspection.token.claim": "true",
+            "userinfo.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "clientHost",
             "jsonType.label": "String"
@@ -1045,6 +1048,7 @@
             "user.session.note": "AUTH_TIME",
             "id.token.claim": "true",
             "introspection.token.claim": "true",
+            "userinfo.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "auth_time",
             "jsonType.label": "long"
@@ -2405,6 +2409,15 @@
       "config": {}
     },
     {
+      "alias": "idp_link",
+      "name": "Linking Identity Provider",
+      "providerId": "idp_link",
+      "enabled": true,
+      "defaultAction": false,
+      "priority": 120,
+      "config": {}
+    },
+    {
       "alias": "update_user_locale",
       "name": "Update User Locale",
       "providerId": "update_user_locale",
@@ -2437,7 +2450,7 @@
     "frontendUrl": "",
     "acr.loa.map": "{\"IDM_ADMIN\":\"2\",\"IDM_USER\":\"1\"}"
   },
-  "keycloakVersion": "26.1.2",
+  "keycloakVersion": "26.5.2",
   "userManagedAccessAllowed": false,
   "organizationsEnabled": false,
   "verifiableCredentialsEnabled": false,
