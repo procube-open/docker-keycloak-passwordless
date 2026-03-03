@@ -1,4 +1,4 @@
-743,744c743
+822,823c822
 <                 .map(ModelToRepresentation::toRepresentation)
 <                 .peek(credentialRepresentation -> credentialRepresentation.setSecretData(null));
 ---
