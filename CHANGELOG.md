@@ -1,5 +1,18 @@
 # auth-keycloak-cr
 
+## 2.0.0
+
+### Major Changes
+
+- c83bbb1: publish new branch
+
+### Patch Changes
+
+- b43e117: update initial config file
+- 92fdb26: update base image
+- aa84b82: fix order
+- 4804bec: update base image
+
 ## 2.0.0-rc.4
 
 ### Patch Changes
