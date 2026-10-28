@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 26.8.1-rc.0
+
+### Patch Changes
+
+- publish new branch
+
 ## 2.0.0
 
 ### Major Changes

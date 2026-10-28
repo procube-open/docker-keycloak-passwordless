@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "auth-keycloak-cr": "2.0.0"
+  },
+  "changesets": [
+    "proud-coats-cross"
+  ]
+}
