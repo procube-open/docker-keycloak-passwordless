@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 26.8.1-rc.1
+
+### Patch Changes
+
+- fix patch file
+
 ## 26.8.1-rc.0
 
 ### Patch Changes
