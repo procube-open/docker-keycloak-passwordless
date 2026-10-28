@@ -1,5 +1,11 @@
 # auth-keycloak-cr
 
+## 26.8.1-rc.2
+
+### Patch Changes
+
+- fix token
+
 ## 26.8.1-rc.1
 
 ### Patch Changes
