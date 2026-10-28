@@ -1,0 +1,40 @@
+{
+    "name": "keycloak for WebAuthn passwordless",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04", // Any generic, debian-based image.
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "24.22.1",
+            "pnpmVersion": "11.18.0"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "toolsToInstall": "tavern"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+    "initializeCommand": "if ! docker network ls | awk '{ print $2 }' | grep -qx 'app-network'; then docker network create --driver bridge app-network; fi",
+    "postCreateCommand": "pnpm install --frozen-lockfile",
+    "runArgs": [
+        "--network=app-network"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "explorer.confirmDragAndDrop": false,
+                "files.autoSave": "onFocusChange",
+                "editor.acceptSuggestionOnEnter": "off",
+                "files.exclude": {
+                    "**/.git": false
+                },
+                "files.trimTrailingWhitespace": true,
+                "files.trimFinalNewlines": true,
+                "files.insertFinalNewline": true
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+diff --git a/cs/add-change.sh b/cs/add-change.sh
+index 7f538e809ba9751e815435d482dc5189fdc90d8d..997155e947d96785bc8230ba5d631f145262e47a 100755
+--- a/cs/add-change.sh
++++ b/cs/add-change.sh
+@@ -15,4 +15,4 @@ if [ "$current_branch" == "main" ]; then
+   exit 1
+ fi
+ set -x
+-yarn changeset add
++pnpm changeset add
+diff --git a/cs/common.sh b/cs/common.sh
+index 02e6892bc0601726e5c4b65d43dde2d1d0c50867..e5179f6df1d55124eec6f70ba70704beee2c12eb 100755
+--- a/cs/common.sh
++++ b/cs/common.sh
+@@ -5,10 +5,10 @@ fi
+ 
+ function usage() {
+     echo "以下の手順でご利用ください。"
+-    echo " 1. yarn start-pr でプルリクエスト用ブランチを作成し、 Prerelease モードに入る"
+-    echo " 2. yarn add-change で変更内容ログを追加する"
+-    echo " 3. yarn push-pr でその内容を github.com にプッシュする"
+-    echo " 4. yarn end-pr で Prerelease モードを終了し、マージし、 main ブランチに戻り、 pull し、プルリクエスト用ブランチを削除する"
++    echo " 1. pnpm start-pr でプルリクエスト用ブランチを作成し、 Prerelease モードに入る"
++    echo " 2. pnpm add-change で変更内容ログを追加する"
++    echo " 3. pnpm push-pr でその内容を github.com にプッシュする"
++    echo " 4. pnpm end-pr で Prerelease モードを終了し、マージし、 main ブランチに戻り、 pull し、プルリクエスト用ブランチを削除する"
+ }
+ 
+ if ! git_status=$(git status); then
+diff --git a/cs/end-pr.sh b/cs/end-pr.sh
+index d25d42fb74c5ea71b6b8033035083871635f6068..b8800f38b5c40b2537f5662724c698444c19dc98 100755
+--- a/cs/end-pr.sh
++++ b/cs/end-pr.sh
+@@ -33,8 +33,8 @@ if [ "$current_branch" == "main" ]; then
+   exit 1
+ fi
+ set -x
+-yarn changeset pre exit
+-yarn changeset version
++pnpm changeset pre exit
++pnpm changeset version
+ set +x
+ version=$(node -e "console.log(require('./package.json').version)")
+ set -x
+@@ -50,7 +50,7 @@ set +x
+ if [ "$do_merge" == "no" ]; then
+   exit 0
+ fi
+-sleep 2
++sleep 20
+ set -x
+ # gh pr review "$pr_url" --approve
+ gh pr merge --auto --delete-branch --squash "$pr_url"
+diff --git a/cs/init-cs-tools.sh b/cs/init-cs-tools.sh
+index ffa55d292608e8480b4261e7e95303dcabe8be8a..558dce7e6097432e2fcf29a20e6344ebfe21ffbd 100755
+--- a/cs/init-cs-tools.sh
++++ b/cs/init-cs-tools.sh
+@@ -11,8 +11,8 @@ if [ "$CLASS" != "npm" -a "$CLASS" != "container-image" ]; then
+ fi
+ 
+ set -x
+-yarn add -D @changesets/cli
+-yarn changeset init
++pnpm add -D @changesets/cli
++pnpm changeset init
+ mkdir -p .github/workflows
+ # rm -f .github/workflows/*
+ cp -a node_modules/@procube/cs-tools/workflows-${CLASS}/* .github/workflows
+diff --git a/cs/push-pr.sh b/cs/push-pr.sh
+index 447800963ebd91bc0ad6aa12d7defefad1199441..2fad5deea9cb18963c9973160cf3e18b2c55b9ef 100755
+--- a/cs/push-pr.sh
++++ b/cs/push-pr.sh
+@@ -21,8 +21,8 @@ if [ "$current_branch" == "main" ]; then
+   exit 1
+ fi
+ set -x
+-yarn changeset status
+-yarn changeset version
++pnpm changeset status
++pnpm changeset version
+ version=$(node -e "console.log(require('./package.json').version)")
+ git add -A
+ git commit -m "commit for $version"
+diff --git a/cs/start-pr.sh b/cs/start-pr.sh
+index 216abd63f8bfb54a54742d69fc04e387878d6f86..9680ca1b35b67b899bd0d547f3fe0293a81e72d8 100755
+--- a/cs/start-pr.sh
++++ b/cs/start-pr.sh
+@@ -28,4 +28,4 @@ if ! git pull $remote main; then
+ fi
+ set -x
+ git checkout -b ${branch_name}
+-yarn changeset pre enter rc
++pnpm changeset pre enter rc

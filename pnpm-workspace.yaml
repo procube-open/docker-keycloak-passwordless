@@ -1,0 +1,6 @@
+# パッケージ公開後、最低3日（4320分）経過するまでインストールを拒否
+# minimumReleaseAge: 4320
+minimumReleaseAge: 10080
+
+patchedDependencies:
+  '@procube/cs-tools': patches/@procube__cs-tools.patch
